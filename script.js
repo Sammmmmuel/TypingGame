@@ -4,6 +4,55 @@ const originText = document.querySelector('.text').innerHTML
 const resetButton = document.querySelector('#reset')
 const theTimer = document.querySelector('.timer')
 
+
+// new code 
+
+const typingDiv = document.getElementById('typing')
+const text = originText
+    // typingDiv.innerText = text
+let cursorIndex = 0
+const characters = text.split('').map((char) => {
+    const span = document.createElement('span')
+    span.innerText = char
+    typingDiv.appendChild(span)
+    return span
+})
+
+let cursorCharacter = characters[cursorIndex]
+cursorCharacter.classList.add('cursor')
+
+let startTime = null
+let endTime = null
+
+const keyListener = document.addEventListener('keydown', ({ key }) => {
+    if (!startTime) {
+        startTime = new Date()
+    }
+    if (key === cursorCharacter.innerText) {
+        cursorCharacter.classList.remove('cursor')
+        cursorCharacter.classList.add('done');
+        cursorCharacter = characters[++cursorIndex]
+    }
+    if (cursorIndex >= characters.length) {
+        endTime = new Date()
+        const delta = endTime - startTime
+        const seconds = delta / 1000
+
+        const numberOfWords = text.split(" ").length
+        const wps = numberOfWords / seconds
+        const wpm = wps * 60.0
+        document.getElementById('stats').innerText = `wpm = ${wpm}`
+        document.removeEventListener("keydown", keyListener)
+        return
+    }
+    cursorCharacter.classList.add('cursor')
+
+})
+
+// new code 
+
+
+
 let timer = [0, 0, 0, 0]
 let interval
 let timerRunning = false

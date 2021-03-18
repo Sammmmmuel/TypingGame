@@ -56,3 +56,18 @@ body {
 #textArea {
     width: 100%;
 }
+
+.cursor {
+    background-color: aqua;
+}
+
+.done {
+    color: gray;
+}
+
+#stats {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    margin-left: 6px;
+}
