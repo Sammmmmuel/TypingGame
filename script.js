@@ -40,7 +40,7 @@ const keyListener = document.addEventListener('keydown', ({ key }) => {
 
         const numberOfWords = text.split(" ").length
         const wps = numberOfWords / seconds
-        const wpm = wps * 60.0
+        const wpm = Math.round(wps * 60.0)
         document.getElementById('stats').innerText = `wpm = ${wpm}`
         document.removeEventListener("keydown", keyListener)
         return

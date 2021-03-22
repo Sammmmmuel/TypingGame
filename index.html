@@ -12,48 +12,48 @@
     <div class="wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-12 header">
-                    <h4>Welcome To The Typing Game !</h4>
+                <div class="d-flex justify-content-center">
+                    <div class="col-3 header">
+                        <h4 class="text-center">Welcome To The Typing Game</h4>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 origin-text" id="typing">
-                    <p class="text">hello how are you?</p>
+                    <p class="text">hello how are you</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="col-12 text-wrapper">
-                        <textarea name="text" id="textArea" rows="6" placeholder="Start Typing to start"></textarea>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-6 origin-text">
-                    <p id="stats"></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6" id="clock">
-                                <div class="timer-wrapper">
-                                    <p class="timer">00:00:00</p>
-                                </div>
-                            </div>
-                            <div class="col-6 ">
-                                <button id="reset" class="btn btn-dark button">Start</button>
-                            </div>
-                        </div>
-                        <!-- <div class="col-6">
-                            <p id="stats"></p>
-                        </div> -->
+                    <div class="text-wrapper">
+                        <textarea name="text" id="textArea" rows="3" placeholder="Click Here And Start Typing"></textarea>
                     </div>
                 </div>
             </div>
 
+
+
+
+
+
+            <div class="d-flex flex-row">
+                <div class="col-6" id="clock">
+                    <div class="timer-wrapper">
+                        <p class="timer">00:00:00</p>
+                    </div>
+                </div>
+                <div class="col-6 stats">
+                    <p id="stats">Words Per Minute</p>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- <div class="col-6 ">
+                <button id="reset" class="btn-lg btn-dark button">Start</button>
+            </div> -->
         </div>
     </div>
 
